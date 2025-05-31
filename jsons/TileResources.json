@@ -1,0 +1,65 @@
+[
+	{
+		"name": "A",
+		"resourceType": "Strategic",
+		"uniques": [
+			"Doesn't generate naturally",
+			"Cannot be traded",
+			"Stockpiled",
+			"Excluded from map editor"
+		]
+	},
+	{
+		"name": "B",
+		"resourceType": "Strategic",
+		"uniques": [
+			"Doesn't generate naturally",
+			"Cannot be traded",
+			"Stockpiled",
+			"Excluded from map editor"
+		]
+	},
+	{
+		"name": "Output",
+		"resourceType": "Strategic",
+		"uniques": [
+			"Doesn't generate naturally",
+			"Cannot be traded",
+			"Stockpiled",
+			"Excluded from map editor"
+		]
+	},
+	{
+		"name": "Dummy",
+		"resourceType": "Bonus",
+		"uniques": [
+			"Doesn't generate naturally",
+			"Cannot be traded",
+			"Stockpiled",
+			"Excluded from map editor",
+			"Will not be displayed in Civilopedia"
+		]
+	},
+	{
+		"name": "Factorial Dummy",
+		"resourceType": "Bonus",
+		"uniques": [
+			"Doesn't generate naturally",
+			"Cannot be traded",
+			"Stockpiled",
+			"Excluded from map editor",
+			"Will not be displayed in Civilopedia"
+		]
+	},
+	{
+		"name": "Count Up",
+		"resourceType": "Bonus",
+		"uniques": [
+			"Doesn't generate naturally",
+			"Cannot be traded",
+			"Stockpiled",
+			"Excluded from map editor",
+			"Will not be displayed in Civilopedia"
+		]
+	}
+]

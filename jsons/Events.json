@@ -1,0 +1,426 @@
+[
+    {
+        "name": "Zero A",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Instantly gain [1] [A] <for every [-[A]]>",
+                    "Instantly gain [-1] [A] <for every [A]>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zero B",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Instantly gain [1] [B] <for every [-[B]]>",
+                    "Instantly gain [-1] [B] <for every [B]>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zero Output",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Instantly gain [1] [Output] <for every [-[Output]]>",
+                    "Instantly gain [-1] [Output] <for every [Output]>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zero Dummy",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Instantly gain [1] [Dummy] <for every [-[Dummy]]>",
+                    "Instantly gain [-1] [Dummy] <for every [Dummy]>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zero Factorial Dummy",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Instantly gain [1] [Factorial Dummy] <for every [-[Factorial Dummy]]>",
+                    "Instantly gain [-1] [Factorial Dummy] <for every [Factorial Dummy]>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zero Count Up",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Instantly gain [1] [Count Up] <for every [-[Count Up]]>",
+                    "Instantly gain [-1] [Count Up] <for every [Count Up]>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dummy to A",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Instantly gain [1] [A] <for every [Dummy]> <hidden from users>",
+                    "Triggers a [Zero Dummy] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dummy to B",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Triggers a [Zero B] event <hidden from users>",
+                    "Instantly gain [1] [B] <for every [Dummy]> <hidden from users>",
+                    "Triggers a [Zero Dummy] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Factorial Dummy to Dummy",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Triggers a [Zero Dummy] event <hidden from users>",
+                    "Instantly gain [1] [Dummy] <for every [Factorial Dummy]>",
+                    "Triggers a [Zero Factorial Dummy] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Factorial A",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Only available <when number of [Count Up] is less than [A]>",
+                    "Instantly gain [1] [Factorial Dummy] <for every [([Count Up] + 1) * [Dummy]]>",
+                    "Instantly gain [1] [Count Up]",
+                    "Triggers a [Factorial Dummy to Dummy] event <hidden from users>",
+                    "Triggers a [Factorial A] event <hidden from users>"
+                ]
+            },
+            {
+                "uniques": [
+                    "Only available <when number of [Count Up] is equal to [A]>",
+                    "Triggers a [Zero Count Up] event <hidden from users>",
+                    "Triggers a [Dummy to A] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Factorial B",
+        "presentation": "None",
+        "choices": [
+            {
+                "uniques": [
+                    "Only available <when number of [Count Up] is less than [B]>",
+                    "Instantly gain [1] [Factorial Dummy] <for every [([Count Up] + 1) * [Dummy]]>",
+                    "Instantly gain [1] [Count Up]",
+                    "Triggers a [Factorial Dummy to Dummy] event <hidden from users>",
+                    "Triggers a [Factorial B] event <hidden from users>"
+                ]
+            },
+            {
+                "uniques": [
+                    "Only available <when number of [Count Up] is equal to [B]>",
+                    "Triggers a [Zero Count Up] event <hidden from users>",
+                    "Triggers a [Dummy to B] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Begin Calculating",
+        "text": "Welcome to Unciv Calculator! What do you wish to do?",
+        "choices": [
+            {
+                "text": "Begin by inputting a value for A",
+                "uniques": [
+                    "Triggers a [Input A] event <hidden from users>",
+                    "Only available <when number of [A] is equal to [0]> <when number of [B] is equal to [0]> <when number of [Output] is equal to [0]> <hidden from users>"
+                ]
+            },
+            {
+                "text": "Clear everything and start over by inputting A",
+                "uniques": [
+                    "Unavailable <when number of [A] is equal to [0]> <when number of [B] is equal to [0]> <when number of [Output] is equal to [0]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>",
+                    "Triggers a [Zero Output] event <hidden from users>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Set the last output as A",
+                "uniques": [
+                    "Only available <when number of [A] is equal to [0]> <when number of [B] is equal to [0]> <when number of [Output] is different than [0]> <hidden from users>",
+                    "Instantly gain [-1] [A] <for every [-[Output]]> <hidden from users>",
+                    "Instantly gain [1] [A] <for every [Output]> <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>",
+                    "Triggers a [Zero Output] event <hidden from users>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Just let me play"
+            }
+        ]
+    },
+    {
+        "name": "Input A",
+        "text": "What is the value of A?",
+        "choices": [
+            {
+                "text": "Increase by 1",
+                "uniques": [
+                    "Instantly gain [1] [A] <hidden from users>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Increase by 10",
+                "uniques":[
+                    "Instantly gain [10] [A] <hidden from users>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Do operations on A",
+                "uniques": [
+                    "Triggers a [Change A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Accept this value",
+                "uniques": [
+                    "Triggers a [Choose Action] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Choose Action",
+        "text": "What do you want to do next?",
+        "choices": [
+            {
+                "text": "Accept A as output",
+                "uniques": [
+                    "Instantly gain [1] [Output] <for every [A]> <hidden from users>",
+                    "Instantly gain [-1] [Output] <for every [-[A]]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Include a second number",
+                "uniques": [
+                    "Triggers a [Input B] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Change A",
+        "text": "What operation do you want to do to A?",
+        "choices": [
+            {
+                "text": "Negate it",
+                "uniques": [
+                    "Instantly gain [-2] [A] <for every [A]> <hidden from users>",
+                    "Instantly gain [2] [A] <for every [-[A]]> <hidden from users>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Take the square root",
+                "uniques": [
+                    "Only available <when number of [A] is more than [0]> <hidden from users>",
+                    "Instantly gain [1] [Dummy] <for every [ceil(sqrt([A]))]> <hidden from users>",
+                    "Triggers a [Dummy to A] event <hidden from users>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Square it",
+                "uniques": [
+                    "Instantly gain [1] [Dummy] <for every [[A] * [A]]> <hidden from users>",
+                    "Triggers a [Dummy to A] event <hidden from users>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Take the factorial of it",
+                "uniques": [
+                    "Only available <when number of [A] is more than [-1]> <hidden from users>",
+                    "Instantly gain [1] [A] <when number of [A] is equal to [0]> <hidden from users>",
+                    "Instantly gain [2] [Count Up] <hidden from users> <when number of [A] is more than [2]>",
+                    "Instantly gain [2] [Dummy] <hidden from users> <when number of [A] is more than [2]>",
+                    "Triggers a [Factorial A] event <hidden from users> <when number of [A] is more than [2]>",
+                    "Triggers a [Input A] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+
+    {
+        "name": "Input B",
+        "text": "What is the value of B?",
+        "choices": [
+            {
+                "text": "Increase by 1",
+                "uniques": [
+                    "Instantly gain [1] [B] <hidden from users>",
+                    "Triggers a [Input B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Increase by 10",
+                "uniques":[
+                    "Instantly gain [10] [B] <hidden from users>",
+                    "Triggers a [Input B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Do operations on B",
+                "uniques": [
+                    "Triggers a [Change B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Accept this value",
+                "uniques": [
+                    "Triggers a [Two Numbers] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Change B",
+        "text": "What operation do you want to do to B?",
+        "choices": [
+            {
+                "text": "Negate it",
+                "uniques": [
+                    "Instantly gain [-2] [B] <for every [B]> <hidden from users>",
+                    "Instantly gain [2] [B] <for every [-[B]]> <hidden from users>",
+                    "Triggers a [Input B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Take the square root",
+                "uniques": [
+                    "Only available <when number of [B] is more than [-1]> <hidden from users>",
+                    "Instantly gain [1] [Dummy] <for every [ceil(sqrt([B]))]> <hidden from users>",
+                    "Triggers a [Dummy to B] event <hidden from users>",
+                    "Triggers a [Input B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Square it",
+                "uniques": [
+                    "Instantly gain [1] [Dummy] <for every [[B] * [B]]> <hidden from users>",
+                    "Triggers a [Dummy to B] event <hidden from users>",
+                    "Triggers a [Input B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Take the factorial of it",
+                "uniques": [
+                    "Only available <when number of [B] is more than [-1]> <hidden from users>",
+                    "Instantly gain [1] [B] <when number of [B] is equal to [0]> <hidden from users>",
+                    "Instantly gain [2] [Count Up] <hidden from users> <when number of [B] is more than [2]>",
+                    "Instantly gain [2] [Dummy] <hidden from users> <when number of [B] is more than [2]>",
+                    "Triggers a [Factorial B] event <hidden from users> <when number of [B] is more than [2]>",
+                    "Triggers a [Input B] event <hidden from users>"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Two Numbers",
+        "text": "What operation do you want to do on the two numbers?",
+        "choices": [
+            {
+                "text": "Add B to A",
+                "uniques": [
+                    "Instantly gain [1] [Output] <for every [[A] + [B]]> <hidden from users>",
+                    "Instantly gain [-1] [Output] <for every [-[A] - [B]]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Subtract B from A",
+                "uniques": [
+                    "Instantly gain [1] [Output] <for every [[A] - [B]]> <hidden from users>",
+                    "Instantly gain [-1] [Output] <for every [-[A] + [B]]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Multiply A by B",
+                "uniques": [
+                    "Instantly gain [1] [Output] <for every [[A] * [B]]> <hidden from users>",
+                    "Instantly gain [-1] [Output] <for every [-([A] * [B])]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Divide A by B",
+                "uniques": [
+                    "Only available <when number of [B] is different than [0]> <hidden from users>",
+                    "Instantly gain [1] [Output] <for every [ceil([A] / [B])]> <hidden from users>",
+                    "Instantly gain [-1] [Output] <for every [-ceil([A] / [B])]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Take the modulo of A divided by B",
+                "uniques": [
+                    "Only available <when number of [B] is different than [0]> <hidden from users>",
+                    "Instantly gain [1] [Output] <for every [[A] % [B]]> <hidden from users>",
+                    "Instantly gain [-1] [Output] <for every [-([A] % [B])]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>"
+                ]
+            },
+            {
+                "text": "Raise A to the power of B",
+                "uniques": [
+                    "Only available <when number of [B] is more than [-1]> <hidden from users>",
+                    "Instantly gain [1] [Output] <for every [[A] ^ [B]]> <hidden from users>",
+                    "Instantly gain [-1] [Output] <for every [-([A] ^ [B])]> <hidden from users>",
+                    "Triggers a [Zero A] event <hidden from users>",
+                    "Triggers a [Zero B] event <hidden from users>"
+                ]
+            }
+        ]
+    }
+]

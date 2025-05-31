@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Calculator",
+        "unitType": "Mathematical",
+        "movement": 1,
+        "cost": 0,
+        "uniques": [
+            "Triggers a [Begin Calculating] event <by consuming this unit>",
+            "Only available <for [Human player] Civilizations>",
+            "Can move immediately once bought",
+            "Uncapturable",
+            "Limited to [1] per Civilization"
+        ]
+    }
+]
