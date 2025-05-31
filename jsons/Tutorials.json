@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Unciv Calculator",
+        "civilopediaText":  [
+            {"text": "Welcome to Unciv Calculator! To get started, purchase a Calculator unit and select the \"Begin Calculating\" event. You'll have options to perform operations on two separate numbers, A and B, and then perform an operation on those two numbers to create an output value, labeled as \"=\" in the resource tab."},
+            {"text": "On each number, you can increase it by units of one or ten, then you can perform operations such as negating it or taking the factorial of it, and then you can combine the numbers with operations such as division or exponents."},
+            {"text": "Is this any good? Not really, but it was fun to build. Let me know if you find any bugs!"},
+            {"link": "Unit/Calculator"}
+        ]
+    }
+]
